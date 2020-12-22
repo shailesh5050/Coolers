@@ -21,6 +21,8 @@ sliders.forEach(slider =>{
 function randomColor(){
     let initialColors = [];
     colorDivs.forEach(function(div,index){
+        //adding to the array 
+        
         const hexText = div.children[0];
         const randomColor = generatHex();
         div.style.backgroundColor = randomColor;
