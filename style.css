@@ -36,21 +36,22 @@ svg {
   position: absolute;
   bottom: 0%;
   background-color: #fff;
-  /* opacity: 0; */
+  opacity: 0; 
   width: 80%;
   padding: 1rem;
-  /* pointer-events: none; */
+  pointer-events: none; 
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
-    /* transform: translateY(100px);  */
-  transition: all 0.5 all ease-in-out;
+  transform: translateY(100px);  
+  transition: .3s ease-in ;
 }
-.sliders .active {
+.active {
   opacity: 1;
+  transition: .5s ease-out ;
   transform: translateY(0);
   pointer-events: all;
 }
-.sliders button {
+.sliders button,.close-save,.close-library{
   top: 0;
   right: 0;
   padding: 0.5rem;
@@ -60,6 +61,7 @@ svg {
   color: #fff;
   border: none;
   cursor: pointer;
+  outline: none;
   position: absolute;
 }
 .controls {
@@ -104,3 +106,111 @@ input[type="range"]{
     cursor: pointer;
     outline: none;
 }
+.copy-container,
+.save-container,
+.library-container{
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  transition: all .5s ease-in-out;
+  align-items: center;
+  pointer-events: none;
+  opacity: 0;
+}
+
+/*by*/
+.copy-popup,
+.save-popup,
+.library-popup {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 2rem;
+  transition: transform 0.5s ease;
+  transform: translateY(-2rem);
+  min-width: 30%;
+  min-height: 30vh;
+}
+.copy-popup h4,
+.save-popup h4,
+.library-popup h4 {
+  font-size: 2rem;
+  padding: 2rem;
+}
+.copy-container.active,
+.save-container.active,
+.library-container.active {
+  opacity: 1;
+  pointer-events: all;
+}
+.copy-popup.active,
+.save-popup.active,
+.library-popup.active {
+  transform: translateY(0rem);
+}
+
+.save-name {
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+.close-save,
+.close-library {
+  border-top-right-radius: 5rem;
+  border-bottom-left-radius: 1rem;
+  outline: none;
+  
+  
+}
+.submit-save {
+  margin: 2rem;
+  padding: 1rem 3rem;
+  background: rgb(60, 60, 92);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.library-popup {
+  min-width: 40%;
+  padding: 1rem;
+  justify-content: flex-start;
+  overflow-y: scroll;
+  max-height: 50vh;
+}
+.custom-palette {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  padding: 2rem;
+}
+.small-preview {
+  display: flex;
+  flex: 1;
+}
+.custom-palette h4 {
+  flex: 1;
+}
+
+.small-preview div {
+  height: 5rem;
+  flex: 1;
+}
+.pick-palette-btn {
+  height: 5rem;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  background: rgb(41, 41, 41);
+  color: white;
+}
+
