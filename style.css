@@ -185,7 +185,7 @@ input[type="range"]{
   overflow-y: scroll;
   max-height: 50vh;
 }
-.custom-palette {
+.custome-palette {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
