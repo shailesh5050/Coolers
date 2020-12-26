@@ -269,7 +269,10 @@ function savePalette(e) {
             colorDivs[index].style.backgroundColor = color;
             
             const text = colorDivs[index].children[0];
-        })
+            checkTextContrast(color,text);
+            updateTextUI(index);
+        });
+        resetInputs()
     })
 
 
